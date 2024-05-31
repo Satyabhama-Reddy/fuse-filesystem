@@ -1,0 +1,34 @@
+in project folder type make
+go to mymount folder on desktop and type the following commands
+
+echo "Hello World" >TestFile1
+ls -l TestFile1;cat TestFile1
+echo "Hello World2" >> TestFile1
+cp TestFile1 TestFile2
+ls -l TestFile2;cat TestFile2
+mkdir TestDir1
+cp TestFile1 TestDir1/TestFile3
+ls -l TestDir1/TestFile3;cat TestDir1/TestFile3
+mkdir TestDir2
+cd TestDir2;echo "Test4">TestFile4
+ls -l TestFile4;cat TestFile4
+cd ..
+cd TestDir1
+mkdir TestDir3
+cd ..
+cd TestDir2
+cp TestFile4 ../TestDir1/TestDir3/TestFile5
+ls -l ../TestDir1/TestDir3/TestFile5;cat ../TestDir1/TestDir3/TestFile5
+rm TestFile4
+cd ..; rmdir TestDir1
+rmdir TestDir2
+cp ../file.txt large.txt
+cat large.txt
+stat large.txt
+chmod 777 large.txt
+stat large.txt
+ls -R
+cd ..;fusermount -u mymount
+
+cd mymount
+ls -R
